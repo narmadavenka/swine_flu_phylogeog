@@ -1,0 +1,21 @@
+/sequences
+
+*Main sequence file used for analysis: H3_final_phylogeography.fasta
+
+# obtained from GISAID (EpiFlu database) and GenBank (NCBI Virus)
+	- Search criteria: Influenza A H3 sequences from swine hosts between 01-01-1998 and 01-01-2026, only consider HA segments (excludes others)
+
+## sequence processing steps
+- Put both database sequences in the same FASTA file
+- Align and de-duplicate sequences by sequence content through MAFFT
+- Remove sequences with more than 15% gaps in the sequences
+
+Now generate maximum clade credibility (mcc) tree via BEAST
+
+After mcc tree:
+- Downsample sequences by shared location, date, and shared parent node
+
+Sequence reference metadata file generation: H3_1990-2026_metadata_final.tsv
+- Extract state and collection date from sequence metadata file provided or from the sequence header
+- For sequences with no clade assignments, clade assignments were made through BV-BRC using the Orthomyxoviridae Swine Influenza H3 reference database.
+	- Sequences that still did not get a clade assignment from BV-BRC got their assignment from the mcc tree, assigning the clade of the other sequences from the shared parent node

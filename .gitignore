@@ -1,0 +1,14 @@
+clade_subsets/
+figures/
+prospective_data/
+sequences_all/
+
+# Ignore everything in phylogeography
+phylogeography/*
+
+# But keep these two folders
+!phylogeography/anthropogenic_predictors/
+!phylogeography/glm/
+
+# Within anthropogenic_predictors, ignore only raw_data_sources
+phylogeography/anthropogenic_predictors/raw_data_sources/

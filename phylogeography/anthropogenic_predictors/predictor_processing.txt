@@ -1,0 +1,24 @@
+/anthropogenic predictors
+
+- Contains the processing of origin-destination state pair ecological drivers (swine populations, swine shipments, human census population, human mobility flows (migration flows, great circle distance)
+
+Contents:
+- Raw data sources were downloaded from the following sites:
+	- swine populations: https://quickstats.nass.usda.gov/
+		- selected for survey program, animals & products, hogs, state-level, and years 1999-2025
+	- swine shipments: https://mountainscholar.org/items/76a508b0-1907-4877-bfdf-ea078402010d
+	- census populations:
+		- 2000-2004: https://www.census.gov/data/tables/time-series/demo/popest/intercensal-2000-2010-state.html
+		- rest: pulled directly in R through the tidycensus package
+	- state-to-state migration flows:
+		- 1995-2000: https://www.census.gov/library/publications/2003/dec/censr-8.html (took Table 3: state of residence)
+		- 2004-2024: https://www.census.gov/data/tables/time-series/demo/geographic-mobility/state-to-state-migration.html
+
+# store these in a folder named raw_data_sources or similar 
+
+- /processed_data_sources
+	- Contains the processed predictor files separated by epoch (pre- and post-2010) for each predictor.
+	- Format: origin-destination state pair matrices with associated predictor values that have been log-transformed and standardized
+
+- /code
+	- Contains the processing code for transforming each predictor data from raw data to processed_data_sources

@@ -1,0 +1,15 @@
+/glm
+
+- Contains the code needed to run the generalized linear models (GLMs) with mean genetic distance between states against the hypothesized ecological drivers
+
+processing of origin-destination state pair ecological drivers (swine populations, swine shipments, human census population, human mobility flows (migration flows, great circle distance)
+
+Contents:
+- glm_functions.R
+	- contains the functions needed to compute the mean genetic distance between states, and run the models per clade and epoch, providing model outputs and outlier state pair residuals
+- glm_analysis.R
+	- contains code to call in the right input files and run the glm functions, gives outputs of coefficient significance as well as state pair residuals
+- glm_coef_summary.csv
+	- contains the outputs of the main GLM model showing, for each clade and epoch, mean beta coefficient for each driver and the proportion of posterior trees where the driver shows significant
+- glm_pair_summary.csv
+	- contains the outputs of the outlier state-pair residuals for each clade and epoch model, showing mean fitted and mean observed residuals, as well as the proportion of outlier
