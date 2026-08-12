@@ -2,6 +2,7 @@ clade_subsets/
 figures/
 prospective_data/
 sequences_all/
+trees/H3_thinned_1000.trees
 
 # Ignore everything in phylogeography
 phylogeography/*

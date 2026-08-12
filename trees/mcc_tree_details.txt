@@ -2,17 +2,18 @@
 
 # list of the maximum clade credibility (mcc) trees created, as well as samples of posterior trees generated to create mcc tree, through BEAST 1.10.4
 
-
+Contents:
 # mcc_1990_v3.trees
 	# created with the following parameters:strict molecular clock, exponential growth coalescent and a 300 million chain length, with sampling every 30,000 states (19). 
 	# Convergence was confirmed by effective sample sizes (ESS) above 200 for all parameters apart from joint and coalescent, and a 10% burn-in was implemented when combining tree files and in extraction of the MCC tree
 
-# H3_thinned_1000.trees
+# posterior_tree_subsampling.R
+	# function used to extract the posterior trees* from this mcc tree
+
+-------------------------------------------------------------------------
+
+# H3_thinned_1000.trees (not published because of large file size but generated)
 	# using the posterior tree distribution that generated mcc_1990_v3.trees, a minimum of 1000 trees were subsampled, focusing on nodes with posterior probabilities of at least 0.9 and picking the top 10% trees that supported genetic relationships between sequences
 	# n=1020 trees were extracted that were used to generate phylogenetic uncertainty for the GLMs and hypothesized ecological drivers
 
-# posterior_tree_subsampling.R
-	# function used to extract the posterior trees
-	
-
-# file for posterior tree distribution was too large to host locally, but it should be the trees output immediately after your BEAST run and what is then inputted into TreeAnnotator
+*file for posterior tree distribution and subsample was too large to upload to GitHub, but it should be the trees output immediately after your BEAST run and what is then inputted into TreeAnnotator
